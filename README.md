@@ -43,4 +43,5 @@ npm run build
 
 ## 编辑不易，赏个水钱
 
-![pay](https://raw.githubusercontent.com/uct8086/jsonVee/master/afb.jpg)
+
+<img alt="Follow me on Twitter" src="https://raw.githubusercontent.com/uct8086/jsonVee/master/afb.jpg" height="150" width="150"/>
