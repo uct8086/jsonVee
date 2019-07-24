@@ -43,4 +43,4 @@ npm run build
 
 ## 编辑不易，赏个水钱
 
-![pay](http://github.com/uct8086/jsonVee/raw/master/afb.jpg)
+![pay](https://raw.githubusercontent.com/uct8086/jsonVee/master/afb.jpg)
