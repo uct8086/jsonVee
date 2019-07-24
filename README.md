@@ -5,8 +5,7 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 
 ### 运行与调试
 
-1. 项目运行与查看：
- - 基本运行项目 
+1. 基本运行项目 
 ```bash
  npm run start
 ```
@@ -44,4 +43,4 @@ npm run build
 
 ## 编辑不易，赏个水钱
 
-![pay](http://github.com/uct8086/jsonVee/raw/master/src/assets/pages/image/afb.jpg)
+![pay](http://github.com/uct8086/jsonVee/raw/master/afb.jpg)
