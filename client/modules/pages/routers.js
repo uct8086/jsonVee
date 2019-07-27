@@ -9,10 +9,10 @@ import pageNotFound from 'components/pageNotFound.vue';
 const routes = {
     routes: [
         { path: `/`, component: homePanel },
-        { 
-            path: `/detail`, 
+        {
+            path: `/detail`,
             component: detailPanel,
-            props: (route) => ({id : route.query.id})
+            props: (route) => ({ id: route.query.id })
         },
         { path: '*', component: pageNotFound }
     ]

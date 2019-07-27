@@ -15,7 +15,7 @@
         
     },
     "watch": [
-        "src/",
+        "client/",
         "app.js",
         "router-config.js"
     ],

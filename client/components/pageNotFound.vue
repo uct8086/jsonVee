@@ -1,9 +1,3 @@
-<style lang="less" scoped>
-.page-not-found-wrapper {
-    text-align: center;
-    margin-top: 5rem;
-}
-</style>
 <template>
     <div class="page-not-found-wrapper">
         额，找不到喔，是不是地址输错了捏？
@@ -18,3 +12,9 @@
         }
     }
 </script>
+<style lang="less" scoped>
+    .page-not-found-wrapper{
+        text-align: center;
+        margin-top: 5rem;
+    }
+</style>

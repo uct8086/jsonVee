@@ -11,8 +11,8 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    //'eye': './src/modules/list/main.js',
-    app: ['babel-polyfill', `./src/modules/${dis}/main.js`],
+    //'eye': './client/modules/list/main.js',
+    app: ['babel-polyfill', `./client/modules/${dis}/main.js`],
   },
   output: {
     path: config.build.assetsRoot,
@@ -24,16 +24,16 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     modules: [
-      resolve('src'),
+      resolve('client'),
       resolve('node_modules')
     ],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      'assets': resolve('src/assets'),
-      'common': resolve('src/common'),
-      'modules': resolve('src/modules'),
-      'components': resolve('src/components'),
+      '@': resolve('client'),
+      'assets': resolve('client/assets'),
+      'common': resolve('client/common'),
+      'modules': resolve('client/modules'),
+      'components': resolve('client/components'),
     }
   },
   module: {
@@ -41,7 +41,7 @@ module.exports = {
       test: /\.(js|vue)$/,
       loader: 'eslint-loader',
       enforce: "pre",
-      include: [resolve('src'), resolve('test')],
+      include: [resolve('client'), resolve('test')],
       options: {
         formatter: eslintFriendlyFormatter
       }
@@ -54,7 +54,7 @@ module.exports = {
     {
       test: /\.js$/,
       loader: 'babel-loader',
-      include: [resolve('src'), resolve('test')]
+      include: [resolve('client'), resolve('test')]
     },
     {
       test: /\.json$/,

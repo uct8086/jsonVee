@@ -1,0 +1,14 @@
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "user": {
+            "userId": 2,
+            "name": "MJ的斯台普斯",
+            "nickname": "MJ的斯台普斯",
+            "isadmin": 0,
+            "phoneNum": "17302659317",
+            "openid": "oFa_U0s6Tg7b3Q_5k8-X0NxVNhIA"
+        }
+    }
+}

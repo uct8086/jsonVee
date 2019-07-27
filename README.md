@@ -6,9 +6,15 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 ### 运行与调试
 
 1. 基本运行项目 
-```bash
- npm run start
-```
+
+    1.1 启动服务端
+    ```bash
+    npm run server
+    ```
+    1.2 启动前端
+    ```bash
+    npm run start
+    ```
 2. 发布
 ```bash
 npm run build
@@ -21,7 +27,7 @@ npm run build
 -------- `/build`   // 打包相关逻辑，一般不用动   
 -------- `/config`  // 环境配置文件，本地环境和生产环境   
 -------- `/dist `   // 生产环境打包完后，就可以把这个目录发布到服务器   
--------- `/src `       
+-------- `/client `       
 -------------- `/assets `   // 资源文件目录，存放图片、样式、字体等   
 -------------- `/common `   // 公共脚本，存放一些工具函数，工具类   
 -------------- `/components `   // 存放抽象后的公司Vue组件   

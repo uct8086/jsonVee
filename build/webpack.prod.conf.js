@@ -16,9 +16,8 @@ var WebpackMd5Hash = require('webpack-md5-hash');
 const DynamicPublicPathPlugin = require("dynamic-public-path-webpack-plugin");
 
 var env = config.build.env
-var dis = process.argv[2];
-var urls = require('../src/common/urls/index');
-var prefix = "http://res.imtt.qq.com/lab-frontend-project";
+var urls = require('../client/common/urls/index');
+// var prefix = "http://res.imtt.qq.com/lab-frontend-project";
 
 /* var filesArray = readdir.readSync(path.resolve(__dirname), [`modules/prod/webpack.${dis}.conf.js`])
 console.log('filesArray', filesArray)
@@ -39,7 +38,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].js'),
     chunkFilename: utils.assetsPath('js/[id].js'),
-    publicPath:`${prefix}/`+dis+'/'  //用了DynamicPublicPathPlugin，这里用相对路径修复css里的otf引用
+    publicPath: '/'  //用了DynamicPublicPathPlugin，这里用相对路径修复css里的otf引用
   },
 
   plugins: [
