@@ -7,7 +7,6 @@ class TestService {
         let data = require("../mock/userinfo.json");
         return data;
     }
-
    
 }
 module.exports = TestService;

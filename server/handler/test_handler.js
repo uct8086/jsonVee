@@ -1,7 +1,7 @@
 
 const testService = require('../service/test_service.js');
 
-class SysHandler {
+class TestHandler {
     /**
      * 获取详细信息
      */
@@ -16,4 +16,4 @@ class SysHandler {
     }
 
 }
-module.exports = SysHandler;
+module.exports = TestHandler;

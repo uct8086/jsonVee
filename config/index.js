@@ -32,11 +32,11 @@ module.exports = {
     assetsSubDirectory: "static",
     assetsPublicPath: "/",
     proxyTable: {
-      '/detail/getdetail': {//入参
+      '/detail': {//入参
         target: `http://localhost:${proxyPort}`,
         changeOrigin: true,
         pathRewrite: {
-          '^/detail/getdetail': '/detail/getdetail'//入参代理的Url
+          '^/detail': '/detail'//入参代理的Url
         }
       },
     },
