@@ -38,7 +38,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].js'),
     chunkFilename: utils.assetsPath('js/[id].js'),
-    publicPath: '/'  //用了DynamicPublicPathPlugin，这里用相对路径修复css里的otf引用
+    publicPath: './'  //用了DynamicPublicPathPlugin，这里用相对路径修复css里的otf引用
   },
 
   plugins: [
@@ -48,9 +48,11 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        drop_debugger: true, 
+        drop_console: true 
       },
-      sourceMap: true
+      sourceMap: false
     }),
 
     // extract css into its own file

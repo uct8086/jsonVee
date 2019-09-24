@@ -10,8 +10,6 @@ var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
 
-var args = process.argv;
-
 var spinner = ora('building for production...')
 spinner.start()
 
@@ -31,7 +29,7 @@ rm(path.join(config.build.assetsRoot, ''), err => {
       chunkModules: false
     }) + '\n\n')
 
-    console.log(chalk.cyan(`  Build ${args[2].toString()} complete.\n`));
+    console.log(chalk.cyan(`  Build  complete.\n`));
     console.log(chalk.yellow(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
       '  Opening index.html over file:// won\'t work.\n'

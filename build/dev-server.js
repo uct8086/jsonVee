@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-01 09:49:26
+ * @LastEditTime: 2019-08-09 14:17:28
+ * @LastEditors: Please set LastEditors
+ */
 require('./check-versions')()
 
 var config = require('../config')
@@ -13,7 +20,7 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
-var port = project === 'list' ? 8777 : (process.env.PORT || config.dev.port)
+var port = project === 'list' ? 9000 : (process.env.PORT || config.dev.port)
 // automatically open browser, if not set will be false
 var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend

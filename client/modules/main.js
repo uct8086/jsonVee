@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routers';
 import * as d3 from "d3";
-import 'assets/pages/css/main.scss';
+import 'assets/css/main.scss';
 
 Vue.use(VueRouter);
 

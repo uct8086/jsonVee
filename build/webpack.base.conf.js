@@ -3,7 +3,6 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var eslintFriendlyFormatter = require('eslint-friendly-formatter')
-var dis = process.argv[2];
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -12,7 +11,7 @@ function resolve(dir) {
 module.exports = {
   entry: {
     //'eye': './client/modules/list/main.js',
-    app: ['babel-polyfill', `./client/modules/${dis}/main.js`],
+    app: ['babel-polyfill', `./client/modules/main.js`],
   },
   output: {
     path: config.build.assetsRoot,
@@ -65,15 +64,17 @@ module.exports = {
       loader: 'url-loader',
       query: {
         limit: 10000,
-        name: utils.assetsPath('img/[name].[hash:7].[ext]')
-      }
+        name: utils.assetsPath('image/[name].[hash:7].[ext]'),
+        publicPath: '/',
+      },
     },
     {
       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
       loader: 'url-loader',
       query: {
         limit: 10000,
-        name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
+        publicPath: '/',
       }
     },
     {
