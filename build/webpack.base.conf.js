@@ -1,8 +1,9 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
-var eslintFriendlyFormatter = require('eslint-friendly-formatter')
+const path = require('path')
+let utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
+const eslintFriendlyFormatter = require('eslint-friendly-formatter')
+
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -10,7 +11,6 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    //'eye': './client/modules/list/main.js',
     app: ['babel-polyfill', `./client/modules/main.js`],
   },
   output: {
@@ -85,16 +85,18 @@ module.exports = {
         name: utils.assetsPath('media/[name].[hash:7].[ext]')
       }
     },
-    /* {
+    {
       test: /\.scss$/,
-      use: [{
-          loader: "style-loader" // 将 JS 字符串生成为 style 节点
-      }, {
-          loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-      }, {
-          loader: "sass-loader" // 将 Sass 编译成 CSS
-      }]
-    } */
+      use: [
+        "style-loader", // 将 JS 字符串生成为 style 节点
+        "css-loader", // 将 CSS 转化成 CommonJS 模块
+        "sass-loader" // 将 Sass 编译成 CSS，默认使用 Node Sass
+      ]
+    },
+    {
+      test: /\.less$/,
+      loader: 'less-loader' // 将 Less 编译为 CSS
+    },
     ]
   }
 }

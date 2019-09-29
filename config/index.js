@@ -3,8 +3,6 @@ let path = require("path");
 let dis = process.argv[2] || "";
 let proxyPort = 8050;
 
-let ApiPrefix = '/webserver';
-
 module.exports = {
   build: {
     env: require("./prod.env"),
@@ -12,7 +10,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, `../dist/${dis}`),
     assetsSubDirectory: "",
     assetsPublicPath: `/${dis}/`,
-    productionSourceMap: true,
+    productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:

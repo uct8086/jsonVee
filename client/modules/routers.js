@@ -12,7 +12,6 @@ const routes = {
         {
             path: `/detail`,
             component: detailPanel,
-            props: (route) => ({ id: route.query.id })
         },
         { path: '*', component: pageNotFound }
     ]

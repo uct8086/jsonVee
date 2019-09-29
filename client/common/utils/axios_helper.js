@@ -48,10 +48,10 @@ export default class HttpHelper{
 
     static [createAxiosRequest](opts) {
         if(!opts.timeout || (typeof opts.timeout !== 'number')){
-            delete opts.timeout
+            delete opts.timeout;
         }
-        const callback = opts.callback
-        delete opts.callback
+        const callback = opts.callback;
+        delete opts.callback;
         opts = Object.assign({}, defaultOpts, opts);
         if(typeof callback === 'function'){
             return this[axiosRequest](opts).then(callback());
@@ -71,20 +71,20 @@ export default class HttpHelper{
                     return resolve('pageNotFound');
                 }
             })
-            .catch(function (error) {
-                if (error.response) {//发出了请求并且服务响应了状态码
+                .catch(function (error) {
+                    if (error.response) {//发出了请求并且服务响应了状态码
                     // console.log(error.response.data);
                     // console.log(error.response.status);
                     // console.log(error.response.headers);
-                    return reject(`发出了请求并且服务响应了状态码 : ${error.response.status}`);
-                } else if (error.request) {//发出了请求但是没有接收到响应
-                    console.log(error.request);
-                    return reject(`发出了请求但是没有接收到响应 : ${error.request}`);
-                } else {//在发送请求的时候出现了一些错误
-                    console.log('Error', error.message);
-                    return reject(`其他异常：${error.message}`);
-                }
-            });
+                        return reject(`发出了请求并且服务响应了状态码 : ${error.response.status}`);
+                    } else if (error.request) {//发出了请求但是没有接收到响应
+                        // console.log(error.request);
+                        return reject(`发出了请求但是没有接收到响应 : ${error.request}`);
+                    } else {//在发送请求的时候出现了一些错误
+                        // console.log('Error', error.message);
+                        return reject(`其他异常：${error.message}`);
+                    }
+                });
         });
     }
 }

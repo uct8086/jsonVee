@@ -4,13 +4,13 @@
     </div>
 </template>
 <script>
-    export default {
-        created() {
-            if (window.location.host.indexOf('localhost') === -1) {
-                window.location.href = "/404";
-            }
+export default {
+    created() {
+        if (window.location.host.indexOf('localhost') === -1) {
+            window.location.href = "/404";
         }
     }
+};
 </script>
 <style lang="less" scoped>
     .page-not-found-wrapper{
