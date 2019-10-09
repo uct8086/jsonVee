@@ -48,7 +48,7 @@ app.use(async function (req, res, next) {
 });
 
 
-app.use(express.static(path.join(__dirname, './dist/pages')));
+app.use(express.static(path.join(__dirname, './dist')));
 
 
 
