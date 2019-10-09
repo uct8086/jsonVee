@@ -21,7 +21,8 @@ module.exports = {
         "ajax": true,
         "axios": true,
         "Tether": true,
-        "Promise": true
+        "Promise": true,
+        "d3": true
     },
     "extends": ["eslint:recommended", "plugin:vue/recommended"],
     "rules": {
@@ -37,6 +38,7 @@ module.exports = {
             "exports": "ignore",
             "functions": "never"
         }],
+        "no-control-regex": "off",
         "comma-style": ["error", "last"],
         "computed-property-spacing": ["error", "never"],
         "no-console": ["error", { "allow": ["warn", "error"] }],

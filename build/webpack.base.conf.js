@@ -56,12 +56,8 @@ module.exports = {
       include: [resolve('client'), resolve('test')]
     },
     {
-      test: /\.json$/,
-      loader: 'json-loader'
-    },
-    {
       test: /\.(png|jpe?g|gif|svg|tif|tiff|bmp)(\?.*)?$/,
-      loader: 'url-loader',
+      loader: 'file-loader',
       query: {
         limit: 10000,
         name: utils.assetsPath('image/[name].[hash:7].[ext]'),
@@ -70,7 +66,7 @@ module.exports = {
     },
     {
       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-      loader: 'url-loader',
+      loader: 'file-loader',
       query: {
         limit: 10000,
         name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
@@ -79,11 +75,15 @@ module.exports = {
     },
     {
       test: /\.mp4(\?.*)?$/,
-      loader: 'url-loader',
+      loader: 'file-loader',
       options: {
         limit: 10000,
         name: utils.assetsPath('media/[name].[hash:7].[ext]')
       }
+    },
+    {
+      test: /\.css$/,
+      loader: 'css-loader',
     },
     {
       test: /\.scss$/,
