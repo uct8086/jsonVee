@@ -13,6 +13,11 @@ const env = config.build.env;
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: config.build.productionSourceMap,
+    })
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({

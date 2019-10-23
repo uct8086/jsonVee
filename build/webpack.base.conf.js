@@ -81,22 +81,6 @@ module.exports = {
         name: utils.assetsPath('media/[name].[hash:7].[ext]')
       }
     },
-    {
-      test: /\.css$/,
-      loader: 'css-loader',
-    },
-    {
-      test: /\.scss$/,
-      use: [
-        "style-loader", // 将 JS 字符串生成为 style 节点
-        "css-loader", // 将 CSS 转化成 CommonJS 模块
-        "sass-loader" // 将 Sass 编译成 CSS，默认使用 Node Sass
-      ]
-    },
-    {
-      test: /\.less$/,
-      loader: 'less-loader' // 将 Less 编译为 CSS
-    },
     ]
   }
 }
