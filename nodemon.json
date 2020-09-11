@@ -17,7 +17,7 @@
     "watch": [
         "client/",
         "app.js",
-        "router-config.js"
+        "server/"
     ],
     "env": {
         "NODE_ENV": "local"
