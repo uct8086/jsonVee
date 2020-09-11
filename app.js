@@ -4,16 +4,16 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const compress = require('compression');
 const favicon = require('serve-favicon');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const config = require('./server/config');
 const baseRouter = require('./server/router');
 const app = express();
 
-//建立连接
-mongoose.connect(config.db.url)
-mongoose.Promise = global.Promise;
+// //建立连接
+// mongoose.connect(config.db.url)
+// mongoose.Promise = global.Promise;
 
-const middlewares = require('./server/middleware');
+// const middlewares = require('./server/middleware');
 const helmet = require('helmet');//防注入中间件
 // const session = require('express-session');
 // let DCacheUtil = null;

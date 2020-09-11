@@ -26,15 +26,15 @@ module.exports = {
   },
   dev: {
     env: require("./dev.env"),
-    port: 8778,
+    port: 8050,
     assetsSubDirectory: "static",
     assetsPublicPath: "/",
     proxyTable: {
-      '/detail': {//入参
+      '/api': {//入参
         target: `http://localhost:${proxyPort}`,
         changeOrigin: true,
         pathRewrite: {
-          '^/detail': '/detail'//入参代理的Url
+          '^/api': '/api'//入参代理的Url
         }
       },
     },
