@@ -54,8 +54,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].js'),
-    chunkFilename: utils.assetsPath('js/[hash:7].js'),
+    filename: utils.assetsPath('js/[hash:7].js'),
+    // chunkFilename: utils.assetsPath('js/[hash:7].js'),
     publicPath: './'  //用了DynamicPublicPathPlugin，这里用相对路径修复css里的otf引用
   },
 
@@ -66,7 +66,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].css')
+      filename: utils.assetsPath('css/[hash:7].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
