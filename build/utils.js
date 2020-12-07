@@ -1,6 +1,6 @@
 const path = require('path')
 const config = require('../config')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
     const assetsSubDirectory = process.env.NODE_ENV === 'production' ?
@@ -27,14 +27,7 @@ exports.cssLoaders = function (options) {
 
         // Extract CSS when that option is specified
         // (which is the case during production build)
-        if (options.extract) {
-            return ExtractTextPlugin.extract({
-                use: [sourceLoader],
-                fallback: 'vue-style-loader'
-            })
-        } else {
-            return ['vue-style-loader', sourceLoader].join('!')
-        }
+        return ['vue-style-loader', sourceLoader].join('!')
     }
 
     // http://vuejs.github.io/vue-loader/en/configurations/extract-css.html
@@ -42,9 +35,6 @@ exports.cssLoaders = function (options) {
         css: generateLoaders(['css']),
         postcss: generateLoaders(['css']),
         less: generateLoaders(['css', 'less']),
-        sass: generateLoaders(['css', 'sass?indentedSyntax']),
-        scss: generateLoaders(['css', 'sass']),
-        stylus: generateLoaders(['css', 'stylus']),
         styl: generateLoaders(['css', 'stylus'])
     }
 }

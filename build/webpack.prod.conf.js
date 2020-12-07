@@ -4,7 +4,7 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const WebpackMd5Hash = require('webpack-md5-hash');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -14,9 +14,16 @@ const env = config.build.env;
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   module: {
-    rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
-    })
+    rules: [
+      {
+        test: /\.(c|le)ss$/,
+        use: [
+           MiniCssExtractPlugin.loader,
+          'css-loader',
+          'less-loader',
+        ],
+      },
+    ]
   },
   optimization: {
     minimizer: [
@@ -65,7 +72,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     // extract css into its own file
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[hash:7].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible
