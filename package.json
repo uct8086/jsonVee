@@ -15,7 +15,7 @@
     "url": "https://github.com/uct8086/jsonVee.git"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "browserslist": "^3.2.8",
     "compression": "^1.7.2",
