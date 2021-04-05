@@ -80,8 +80,8 @@ app.use(function (err, req, res, next) {
     });
 
 });
-app.set('host', process.env.IP || 'localhost');
-app.set('port', process.env.PORT || 8050);
+app.set('host', process.env.IP || '0.0.0.0');
+app.set('port', process.env.PORT || 8001);
 const server = app.listen(app.get('port'), app.get('host'), function () {
     console.log('server listening on port', server.address().port);
 });
