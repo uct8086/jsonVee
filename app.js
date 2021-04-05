@@ -7,7 +7,7 @@ const compress = require('compression');
 // const favicon = require('serve-favicon');
 // const mongoose = require('mongoose');
 const config = require('./server/config');
-const baseRouter = require('./server/router');
+// const baseRouter = require('./server/router');
 const app = express();
 
 // //建立连接
@@ -36,7 +36,7 @@ app.use(compress());
 app.use(bodyParser.json(config.bodyParserJsonOptions));
 app.use(bodyParser.urlencoded(config.bodyParserUrlencodedOptions));
 app.use(cookieParser());
-baseRouter.interceptorHttp(app);
+// baseRouter.interceptorHttp(app);
 //在进入首页或详情页时session check
 app.use(async function (req, res, next) {
     console.log('goto web page' + req.path);
