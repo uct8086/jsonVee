@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -20,7 +19,7 @@ const helmet = require('helmet');//防注入中间件
 // let DCacheUtil = null;
 // let DCacheSessionStore = null;
 
-app.use(favicon(__dirname + '/client/assets/image/favicon.ico'));
+app.use(favicon(__dirname + '/client/assets/image/favicon.ico'))
 
 
 app.disable('x-powered-by');
