@@ -29,6 +29,7 @@
     "helmet": "^3.23.3",
     "install": "^0.12.2",
     "mongoose": "^5.11.8",
+    "nodemon": "^2.0.7",
     "serve-favicon": "^2.5.0",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^3.1.3",

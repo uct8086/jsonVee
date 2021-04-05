@@ -1,11 +1,11 @@
-const uuid = require('uuid/v1');
+// const uuid = require('uuid/v1');
 
 class TestService {
 
     static getDetail() {
         // let requestId = uuid();
-        let data = require("../mock/userinfo.json");
-        return data;
+        // let data = require("../mock/userinfo.json");
+        // return data;
     }
    
 }
