@@ -48,6 +48,10 @@ npm run build
 -------------- `/router `   // 路由  
 -------------- `/service `   // 对Handler的进一步封装    
 
+## 注意事项
+
+因为是新的版本，所以要求Node.js更新到版本16及以上。可以用Nvm来进行Node.js多版本管理。
+
 ## 关于
 
 [Vue.js 文档](https://vuejs.bootcss.com/)   
