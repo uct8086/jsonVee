@@ -3,11 +3,20 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 
 - clone项目到本地之后，到主目录执行`npm install`安装npm依赖
 
+
+## 更新 
+
+- 2021-11-17
+
+1. 升级Webpack，从Webpack4升级到最新的Webpack5
+2. 调整打包逻辑，移除老代码
+3. 更新依赖包，到最新版本
+4. 切换到Vue3.0，欢迎大家尝鲜。
 ### 运行与调试
 
 1. 安装MongoDB
 
-MongoDB 预编译二进制包下载地址：https://www.mongodb.com/download-center/community
+- MongoDB 预编译二进制包下载地址：https://www.mongodb.com/download-center/community
 
 2. 基本运行项目 
 
@@ -48,22 +57,18 @@ npm run build
 -------------- `/router `   // 路由  
 -------------- `/service `   // 对Handler的进一步封装    
 
-## 注意事项
-
-因为是新的版本，所以要求Node.js更新到版本16及以上。可以用Nvm来进行Node.js多版本管理。
 
 ## 关于
 
-[Vue.js 文档](https://vuejs.bootcss.com/)   
+[Vue 2.x 文档](https://vuejs.bootcss.com/)   
+
+[Vue 3.x 文档](https://v3.cn.vuejs.org/)
 
 [Node.js 文档](http://nodejs.cn/)    
 
 [Express 框架学习](https://github.com/expressjs/express)
 
 
-## 更新 2021-11-17
+## 注意事项
 
-1. 升级Webpack，从Webpack4升级到最新的Webpack5
-2. 调整打包逻辑，移除老代码
-3. 更新依赖包，到最新版本
-4. 切换到Vue3.0，欢迎大家尝鲜。
+因为是新的版本，所以要求Node.js更新到版本16及以上。可以用Nvm来进行Node.js多版本管理。
