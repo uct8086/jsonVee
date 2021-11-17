@@ -32,14 +32,14 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 ```bash
 npm run build
 ```
-此时会执行webpack的构建，目标文件会放到dist目录
+此时会执行webpack的构建，目标文件会放到public目录
 
 ## 目录
 
 --- `/project`   
 -------- `/build`   // 打包相关逻辑，一般不用动   
 -------- `/config`  // 环境配置文件，本地环境和生产环境   
--------- `/dist `   // 生产环境打包完后，就可以把这个目录发布到服务器   
+-------- `/public `   // 生产环境打包完后，就可以把这个目录发布到服务器   
 -------- `/client `       
 -------------- `/assets `   // 资源文件目录，存放图片、样式、字体等   
 -------------- `/common `   // 公共脚本，存放一些工具函数，工具类   
