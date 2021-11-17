@@ -62,3 +62,4 @@ npm run build
 1. 升级Webpack，从Webpack4升级到最新的Webpack5
 2. 调整打包逻辑，移除老代码
 3. 更新依赖包，到最新版本
+4. 切换到Vue3.0，欢迎大家尝鲜。
