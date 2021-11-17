@@ -38,13 +38,13 @@ app.use(cookieParser());
 baseRouter.interceptorHttp(app);
 //在进入首页或详情页时session check
 app.use(async function (req, res, next) {
-    console.log('goto web page' + req.path);
+    console.log('goto web page: ' + req.path);
     // TODO
     next();
 });
 
 
-app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, './public')));
 
 
 

@@ -1,4 +1,4 @@
-<template >
+<template>
   <!-- 这里写Html -->
   <div class="wrapper">
     <h1>这是详情页</h1>

@@ -1,19 +1,18 @@
 require('./check-versions')()
 
-let config = require('../config')
+let config = require('./config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-let project = process.argv[2] || 'list'; //确定启动的工程是list还是详情
-let opn = require('opn')
+let open = require('open')
 let path = require('path')
 let express = require('express')
 let webpack = require('webpack')
-let proxyMiddleware = require('http-proxy-middleware')
+let { createProxyMiddleware } = require('http-proxy-middleware')
 let webpackConfig = require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
-let port = project === 'list' ? 9000 : (process.env.PORT || config.dev.port)
+let port = (process.env.PORT || config.dev.port)
 // automatically open browser, if not set will be false
 let autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
@@ -25,19 +24,19 @@ let compiler = webpack(webpackConfig)
 
 let devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  // quiet: true
 })
 
 let hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {}
 })
 // force page reload when html-webpack-plugin template changes
-compiler.plugin('compilation', function (compilation) {
-  compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
-    // cb()
-  })
-})
+// compiler.plugin('compilation', function (compilation) {
+//   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
+//     hotMiddleware.publish({ action: 'reload' })
+//     // cb()
+//   })
+// })
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
@@ -45,7 +44,7 @@ Object.keys(proxyTable).forEach(function (context) {
   if (typeof options === 'string') {
     options = { target: options }
   }
-  app.use(proxyMiddleware(options.filter || context, options))
+  app.use(createProxyMiddleware(options.filter || context, options))
 })
 
 // handle fallback for HTML5 history API
@@ -74,7 +73,7 @@ devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-    opn(uri)
+    open(uri)
   }
   _resolve()
 })

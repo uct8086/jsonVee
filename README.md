@@ -53,7 +53,8 @@ npm run build
 [Express 框架学习](https://github.com/expressjs/express)
 
 
-## 编辑不易，赏个水钱
+## 更新 2021-11-17
 
-
-<img alt="Follow me on Twitter" src="https://raw.githubusercontent.com/uct8086/jsonVee/master/afb.jpg" height="150" width="150"/>
+1. 升级Webpack，从Webpack4升级到最新的Webpack5
+2. 调整打包逻辑，移除老代码
+3. 更新依赖包，到最新版本

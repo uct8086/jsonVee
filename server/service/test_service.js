@@ -1,5 +1,3 @@
-const uuid = require('uuid/v1');
-
 class TestService {
 
     static getDetail() {

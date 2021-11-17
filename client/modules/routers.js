@@ -1,6 +1,6 @@
 /**
  * @description 客户端路由
- * @author tang
+ * @author uct8086
  */
 import homePanel from './home/index.vue';
 import detailPanel from './detail/index.vue';

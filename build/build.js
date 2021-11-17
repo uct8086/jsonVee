@@ -7,7 +7,7 @@ let rm = require('rimraf')
 let path = require('path')
 let chalk = require('chalk')
 let webpack = require('webpack')
-let config = require('../config')
+let config = require('./config')
 let webpackConfig = require('./webpack.prod.conf')
 
 let spinner = ora('building for production...')
