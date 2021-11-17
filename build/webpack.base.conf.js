@@ -5,7 +5,6 @@ const config = require('./config');
 const vueLoaderConfig = require('./vue-loader.conf');
 const { VueLoaderPlugin } = require('vue-loader-v16');
 const ESLintPlugin = require('eslint-webpack-plugin');
-// const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 
 
 function resolve(dir) {
