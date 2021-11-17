@@ -6,15 +6,13 @@ import homePanel from './home/index.vue';
 import detailPanel from './detail/index.vue';
 import pageNotFound from 'components/pageNotFound.vue';
 
-const routes = {
-    routes: [
-        { path: `/`, component: homePanel },
-        {
-            path: `/detail`,
-            component: detailPanel,
-        },
-        { path: '*', component: pageNotFound }
-    ]
-};
+const routes = [
+    { path: `/`, component: homePanel },
+    {
+        path: `/detail`,
+        component: detailPanel,
+    },
+    { path: '/:pathMatch(.*)*', component: pageNotFound }
+];
 
 export default routes;

@@ -4,11 +4,15 @@
   </div>
 </template>
 <script>
+import { onMounted } from 'vue';
+
 export default {
-    created() {
-        if (window.location.host.indexOf('localhost') === -1) {
-            window.location.href = "/404";
-        }
+    setup() {
+        onMounted(()=>{
+            if (window.location.host.indexOf('localhost') === -1) {
+                window.location.href = "/404";
+            }
+        });
     }
 };
 </script>

@@ -5,7 +5,11 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 
 ### 运行与调试
 
-1. 基本运行项目 
+1. 安装MongoDB
+
+MongoDB 预编译二进制包下载地址：https://www.mongodb.com/download-center/community
+
+2. 基本运行项目 
 
     1.1 启动服务端
     ```bash
@@ -15,7 +19,7 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
     ```bash
     npm run start
     ```
-2. 发布
+3. 发布
 ```bash
 npm run build
 ```

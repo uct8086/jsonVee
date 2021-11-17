@@ -1,6 +1,10 @@
 <template>
-  <!-- 这里写Html -->
   <div class="wrapper">
+    <div>
+      <button @click="toDetail">
+        跳转到详情页
+      </button>
+    </div>
     <h1>欢迎支持:</h1>
     <img
       src="../../assets/image/afb.jpg"

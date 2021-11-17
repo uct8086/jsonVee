@@ -1,7 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 let utils = require('./utils');
 const config = require('./config');
 const vueLoaderConfig = require('./vue-loader.conf');
+const { VueLoaderPlugin } = require('vue-loader-v16');
 const ESLintPlugin = require('eslint-webpack-plugin');
 // const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 
@@ -31,7 +33,7 @@ module.exports = {
             resolve('node_modules')
         ],
         alias: {
-            vue$: "vue/dist/vue.esm.js",
+            'vue': 'vue/dist/vue.esm-bundler.js',
             '@': resolve('client'),
             'assets': resolve('client/assets'),
             'common': resolve('client/common'),
@@ -41,18 +43,9 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.(js|vue)$/,
-            //     loader: 'eslint-webpack-plugin',
-            //     enforce: "pre",
-            //     include: [resolve('client'), resolve('test')],
-            //     options: {
-            //         formatter: eslintFriendlyFormatter
-            //     }
-            // },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
+                loader: 'vue-loader-v16',
                 options: vueLoaderConfig
             },
             {
@@ -100,5 +93,11 @@ module.exports = {
             extensions: ['js', 'json', 'vue'],
             exclude: '/node_modules/'
         }),
+        //vue 3.x 增加了两个编译时配置：__VUE_OPTIONS_API__和__VUE_PROD_DEVTOOLS__，适当地配置它们能提高 tree shaking 的效果
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: JSON.stringify(true),
+            __VUE_PROD_DEVTOOLS__: JSON.stringify(false)
+        }),
+        new VueLoaderPlugin(),
     ]
 };

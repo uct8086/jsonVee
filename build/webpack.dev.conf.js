@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+// const VueLoaderPlugin = require('vue-loader-plugin');
 const urls = require('../client/common/urls/index');
 
 // add hot-reload related code to entry chunks
@@ -43,6 +43,6 @@ module.exports = merge(baseWebpackConfig, {
       chunks: ['vendor', 'manifest', 'app']
     }),
     new FriendlyErrorsPlugin(),
-    new VueLoaderPlugin()
+    // new VueLoaderPlugin()
   ]
 })

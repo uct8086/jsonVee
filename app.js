@@ -4,10 +4,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const compress = require('compression');
 const favicon = require('serve-favicon');
+const mongoose = require('mongoose');
 const config = require('./server/config');
 const baseRouter = require('./server/router');
 const app = express();
 
+//建立连接
+mongoose.connect(config.db.url);
+mongoose.Promise = global.Promise;
 
 // const middlewares = require('./server/middleware');
 const helmet = require('helmet');//防注入中间件
@@ -22,7 +26,6 @@ app.disable('x-powered-by');
 if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'local';
 }
-console.log("Node 的版本是？" + process.env.NODE_ENV);
 
 if(Object.is(process.env.NODE_ENV,'local')){
     app.engine('.html', require('ejs').__express);
@@ -36,17 +39,9 @@ app.use(bodyParser.json(config.bodyParserJsonOptions));
 app.use(bodyParser.urlencoded(config.bodyParserUrlencodedOptions));
 app.use(cookieParser());
 baseRouter.interceptorHttp(app);
-//在进入首页或详情页时session check
-app.use(async function (req, res, next) {
-    console.log('goto web page: ' + req.path);
-    // TODO
-    next();
-});
 
 
 app.use(express.static(path.join(__dirname, './public')));
-
-
 
 // app.use(session({
 //     secret: 'foo',
