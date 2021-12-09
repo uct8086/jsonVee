@@ -1,7 +1,54 @@
 import HttpHelper from "common/utils/axios_helper.js";
-import { reactive, onMounted } from 'vue';
+import { reactive, onMounted, } from 'vue';
 import { useRouter } from 'vue-router';
+import VirtualList from 'vue-virtual-list-v3';
+
+// The Climb (From Miley Cyrus)
+const sentence3 = [
+    'BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。',
+    'IFC(Inline Formatting Contexts)直译为”内联格式化上下文”，IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)',
+    "margin 重合，margin 塌陷",
+    "css3",
+    "html5",
+    "es6",
+];
+const TOTAL_COUNT = 100;
+const sizes = [60, 80, 100, 150, 180];
+
+const genUniqueId = (prefix) => {
+    return `${prefix}$${Math.random().toString(16).substr(9)}`;
+};
+
+const getSentences = () => {
+    let index = Math.floor(Math.random() * (sentence3.length - 1));
+    return sentence3[index];
+};
+
+const DataItems = [];
+let count = TOTAL_COUNT;
+while (count--) {
+    const index = TOTAL_COUNT - count;
+    DataItems.push({
+        index,
+        name: `${Math.random()}`,
+        id: genUniqueId(index),
+        desc: getSentences(),
+        size: sizes[Math.floor(Math.random() * 5)]
+    });
+}
+
+
 export default {
+    components: {
+        VirtualList
+    },
+    data () {
+        return {
+            total: TOTAL_COUNT.toLocaleString(),
+            items: DataItems,
+            isShowView: true
+        };
+    },
     setup() {
         const data = reactive({
             id: "5d42ac3d9c149c38248c8199"
