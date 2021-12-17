@@ -1,7 +1,6 @@
 let chalk = require('chalk');
 let semver = require('semver');
 let packageConfig = require('../package.json');
-let shell = require('shelljs');
 
 let versionRequirements = [
     {
@@ -10,14 +9,6 @@ let versionRequirements = [
         versionRequirement: packageConfig.engines.node
     },
 ];
-
-if (shell.which('npm')) {
-    versionRequirements.push({
-        name: 'npm',
-        currentVersion: '5.6.0',
-        versionRequirement: packageConfig.engines.npm
-    });
-}
 
 module.exports = function () {
     let warnings = [];
