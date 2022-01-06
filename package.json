@@ -7,7 +7,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node build/dev-server.js",
-    "test":"npx cross-env NODE_OPTIONS='--trace-warnings' node build/dev-server.js",
+    "test": "npx cross-env NODE_OPTIONS='--trace-warnings' node build/dev-server.js",
     "build": "node build/build.js",
     "server": "nodemon app.js"
   },
@@ -74,7 +74,7 @@
     "terser-webpack-plugin": "^2.3.8",
     "utf-8-validate": "^5.0.7",
     "uuid": "^8.3.2",
-    "vue-virtual-list-v3": "^1.2.5",
+    "vue-virtual-list-v3": "^1.2.6",
     "webpack": "^5.37.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-dev-middleware": "^4.3.0",
