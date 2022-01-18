@@ -1,7 +1,6 @@
 import HttpHelper from "common/utils/axios_helper.js";
 import { reactive, onMounted, } from 'vue';
 import { useRouter } from 'vue-router';
-import VirtualList from 'vue-virtual-list-v3';
 
 // The Climb (From Miley Cyrus)
 const sentence3 = [
@@ -39,9 +38,6 @@ while (count--) {
 
 
 export default {
-    components: {
-        VirtualList
-    },
     data () {
         return {
             total: TOTAL_COUNT.toLocaleString(),
