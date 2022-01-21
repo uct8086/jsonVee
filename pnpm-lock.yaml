@@ -57,7 +57,6 @@ specifiers:
   vue-loader-v16: ^16.0.0-beta.5.4
   vue-router: ^4.0.0-beta.13
   vue-style-loader: ^4.1.3
-  vue-virtual-list-v3: 1.3.3
   webpack: ^5.37.1
   webpack-bundle-analyzer: ^4.4.2
   webpack-dev-middleware: ^4.3.0
@@ -124,7 +123,6 @@ devDependencies:
   terser-webpack-plugin: 2.3.8_webpack@5.66.0
   utf-8-validate: 5.0.8
   uuid: 8.3.2
-  vue-virtual-list-v3: 1.3.3
   webpack: 5.66.0
   webpack-bundle-analyzer: 4.5.0_bffff4271b89d628e8333ead80d3d8e8
   webpack-dev-middleware: 4.3.0_webpack@5.66.0
@@ -5860,10 +5858,6 @@ packages:
       hash-sum: 1.0.2
       loader-utils: 1.4.0
     dev: false
-
-  /vue-virtual-list-v3/1.3.3:
-    resolution: {integrity: sha512-mqMCSVhNWsgxmMVc3JS1QOk4h6P5TLLEOHOH74J+Sy5RN+UJ7l6TnQJ9GuhzjE9J+zofp10SJapIE0MM5X7Yhw==}
-    dev: true
 
   /vue/3.2.27:
     resolution: {integrity: sha512-p1cH8Q6eaPwvANCjFQj497a914cxXKKwOG3Lg9USddTOrn4/zFMKjn9dnovkx+L8VtFaNgbVqW8mLJS/eTA6xw==}

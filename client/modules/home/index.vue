@@ -14,6 +14,9 @@
       src="../../assets/image/weixin.png"
       alt="empty image"
     >
+    <button @click="addItem">
+      添加数据
+    </button>
     <div class="container">
       <virtual-list
         ref="virtualList"

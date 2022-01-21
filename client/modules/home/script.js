@@ -1,5 +1,5 @@
 import HttpHelper from "common/utils/axios_helper.js";
-import { reactive, onMounted, } from 'vue';
+import { reactive, onMounted, ref} from 'vue';
 import { useRouter } from 'vue-router';
 
 // The Climb (From Miley Cyrus)
@@ -41,7 +41,7 @@ export default {
     data () {
         return {
             total: TOTAL_COUNT.toLocaleString(),
-            items: DataItems,
+            // items: DataItems,
             isShowView: true
         };
     },
@@ -62,11 +62,25 @@ export default {
         const toDetail = () => {
             router.push('/detail');
         };
-
+        let items = ref(DataItems);
+        const addItem = () => {
+            DataItems.push({
+                index: Math.random() * 1000 + 1,
+                name: "Brad" + Math.random() * 1000 + 1,
+                id: Date.now(),
+                desc: "html5",
+                size: 150,
+            });
+            console.log(DataItems);
+            // items.value = DataItems; // 这样不行
+            items.value = JSON.parse(JSON.stringify(DataItems));
+        };
         return {
             data,
+            items,
             selectById,
-            toDetail
+            toDetail,
+            addItem
         };
     }
 };
