@@ -17,13 +17,18 @@
     <button @click="addItem">
       添加数据
     </button>
+    <button @click="scrollFun">
+      scrollto
+    </button>
     <div class="container">
       <virtual-list
         ref="virtualList"
         class="list-dynamic scroll-touch"
         :data-key="'id'"
         :data-sources="items"
+        :direction="'vertical'"
         :estimate-size="80"
+        :keeps="5"
         :item-class="'list-item-dynamic'"
       >
         <template #="{source}">
@@ -38,6 +43,22 @@
           </div>
         </template>
       </virtual-list>
+
+
+      <!-- <VirtualList
+        ref="virtualList"
+        class="h-screen overflow-y-auto w-full scroll-touch no-scrollbar"
+        :data-key="'_id'"
+        :data-sources="postItems"
+        :direction="'vertical'"
+        :estimate-size="556"
+        :item-class="'singlePostCard mx-5 mb-4'"
+        :keeps="5"
+        @scroll="scrollNearBy">
+          <template #="{source}">
+          ...
+          </template>
+        </VirtualList> -->
     </div>
   </div>
 </template>
