@@ -6,6 +6,11 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 
 ## 更新 
 
+- 2022-04-06
+
+1. 添加element-plus支持
+2. 修复已知Bug
+
 - 2021-11-17
 
 1. 升级Webpack，从Webpack4升级到最新的Webpack5
