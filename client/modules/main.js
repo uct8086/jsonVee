@@ -3,9 +3,10 @@ import {createRouter, createWebHashHistory} from 'vue-router';
 import routes from './routers';
 import * as d3 from "d3";
 import 'assets/css/main.less';
-import VirtualList from 'vue-virtual-list-v3';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
 
-console.log(VirtualList);
+
 
 window.d3 = d3;
 
@@ -18,6 +19,7 @@ const myApp = createApp({
 });
 
 myApp.use(router);
-myApp.use(VirtualList);
+
+myApp.use(ElementPlus);
 
 myApp.mount("#app-wrapper");

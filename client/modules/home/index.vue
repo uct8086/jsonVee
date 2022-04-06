@@ -14,61 +14,36 @@
       src="../../assets/image/weixin.png"
       alt="empty image"
     >
-    <button @click="addItem">
-      添加数据
-    </button>
-    <button @click="scrollFun">
-      scrollto
-    </button>
     <div class="container">
-      <virtual-list
-        ref="virtualList"
-        class="list-dynamic scroll-touch"
-        :data-key="'id'"
-        :data-sources="items"
-        :direction="'vertical'"
-        :estimate-size="80"
-        :keeps="5"
-        :item-class="'list-item-dynamic'"
+      <el-table
+        :data="tableData"
+        style="width: 100%"
       >
-        <template #="{source}">
-          <div class="item-inner">
-            <div class="head">
-              <span># {{ source.index }}</span>
-              <span>{{ source.name }}</span>
-            </div>
-            <div class="desc">
-              {{ source.desc }}
-            </div>
-          </div>
-        </template>
-      </virtual-list>
-
-
-      <!-- <VirtualList
-        ref="virtualList"
-        class="h-screen overflow-y-auto w-full scroll-touch no-scrollbar"
-        :data-key="'_id'"
-        :data-sources="postItems"
-        :direction="'vertical'"
-        :estimate-size="556"
-        :item-class="'singlePostCard mx-5 mb-4'"
-        :keeps="5"
-        @scroll="scrollNearBy">
-          <template #="{source}">
-          ...
-          </template>
-        </VirtualList> -->
+        <el-table-column
+          prop="date"
+          label="日期"
+          width="180"
+        />
+        <el-table-column
+          prop="name"
+          label="姓名"
+          width="180"
+        />
+        <el-table-column
+          prop="address"
+          label="地址"
+        />
+      </el-table>
     </div>
   </div>
 </template>
 <script src="./script.js"></script>
 
 <style lang="less">
-  .container {
-    border: 1px solid #eee;
-    padding: 20px;
-    margin-top: 20px;
+.container {
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-top: 20px;
 }
 .list-dynamic {
   width: 100%;
@@ -93,14 +68,14 @@
     margin-right: 1em;
   }
   .desc {
-    padding-top: .5em;
+    padding-top: 0.5em;
     text-align: justify;
   }
 }
 .list-horizontal {
   width: 100%;
   overflow-x: auto;
-  display: flex; 
+  display: flex;
 
   .wrapper {
     display: flex;

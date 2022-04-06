@@ -5,6 +5,10 @@ const config = require('./config');
 const vueLoaderConfig = require('./vue-loader.conf');
 const { VueLoaderPlugin } = require('vue-loader-v16');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const AutoImport = require('unplugin-auto-import/webpack')
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+const ElementPlusCssResolver = require('unplugin-element-plus/webpack')
 
 
 function resolve(dir) {
@@ -90,7 +94,7 @@ module.exports = {
         new ESLintPlugin({
             fix: true,
             extensions: ['js', 'json', 'vue'],
-            exclude: '/node_modules/'
+            // exclude: '/node_modules/' // fix bug: ERROR in Failed to load config "./.config/eslint.config" to extend from.
         }),
         //vue 3.x 增加了两个编译时配置：__VUE_OPTIONS_API__和__VUE_PROD_DEVTOOLS__，适当地配置它们能提高 tree shaking 的效果
         new webpack.DefinePlugin({
@@ -98,5 +102,12 @@ module.exports = {
             __VUE_PROD_DEVTOOLS__: JSON.stringify(false)
         }),
         new VueLoaderPlugin(),
+        AutoImport({
+            resolvers: [ElementPlusResolver()],
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()],
+        }),
+        ElementPlusCssResolver(),
     ]
 };
