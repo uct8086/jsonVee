@@ -44,6 +44,7 @@
         </template>
       </virtual-list>
 
+      <vue-quill-editor />
 
       <!-- <VirtualList
         ref="virtualList"
