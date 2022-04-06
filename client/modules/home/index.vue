@@ -14,23 +14,8 @@
       src="../../assets/image/weixin.png"
       alt="empty image"
     >
-    <button @click="addItem">
-      添加数据
-    </button>
-    <button @click="scrollFun">
-      scrollto
-    </button>
     <div class="container">
-      <virtual-list
-        ref="virtualList"
-        class="list-dynamic scroll-touch"
-        :data-key="'id'"
-        :data-sources="items"
-        :direction="'vertical'"
-        :estimate-size="80"
-        :keeps="5"
-        :item-class="'list-item-dynamic'"
-      >
+      <virtual-list>
         <template #="{source}">
           <div class="item-inner">
             <div class="head">
@@ -66,10 +51,10 @@
 <script src="./script.js"></script>
 
 <style lang="less">
-  .container {
-    border: 1px solid #eee;
-    padding: 20px;
-    margin-top: 20px;
+.container {
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-top: 20px;
 }
 .list-dynamic {
   width: 100%;
@@ -94,14 +79,14 @@
     margin-right: 1em;
   }
   .desc {
-    padding-top: .5em;
+    padding-top: 0.5em;
     text-align: justify;
   }
 }
 .list-horizontal {
   width: 100%;
   overflow-x: auto;
-  display: flex; 
+  display: flex;
 
   .wrapper {
     display: flex;

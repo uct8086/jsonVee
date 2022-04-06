@@ -22,6 +22,7 @@ const webpackConfig = merge(baseWebpackConfig, {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'less-loader',
+                    'sass-loader',
                 ],
             },
         ]

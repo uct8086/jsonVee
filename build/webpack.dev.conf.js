@@ -21,6 +21,7 @@ module.exports = merge(baseWebpackConfig, {
              'vue-style-loader',
             'css-loader',
             'less-loader',
+            'sass-loader'
         ],
       },
     ]
