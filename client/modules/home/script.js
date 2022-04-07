@@ -2,6 +2,7 @@
 // import { reactive, onMounted, ref} from 'vue';
 // import { ElTable, ElTableColumn } from "element-plus";
 // import 'element-plus/es/components/table/style/css';
+import { useRouter } from 'vue-router';
 
 
 export default {
@@ -15,7 +16,11 @@ export default {
         // ElTableColumn,
     },
     setup() {
+        const router = useRouter();
 
+        const toDetail = () => {
+            router.push('/threejs');
+        };
         const tableData = [
             {
                 date: '2016-05-02',
@@ -40,7 +45,8 @@ export default {
         ];
 
         return {
-            tableData
+            tableData,
+            toDetail
         };
     }
 };

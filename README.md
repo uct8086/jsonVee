@@ -4,6 +4,16 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 - clone项目到本地之后，到主目录执行`npm install`安装npm依赖
 
 
+## three.js 运行步骤
+
+1. `npm run build`
+2. `npm run server`
+3. 浏览器中访问： [http://localhost:8050/#/detail](http://localhost:8050/#/detail)
+
+
+**注意：关键配置在`build/webpack.prod.conf.js`，里面有个CopyPlugin插件**
+
+
 ## 更新 
 
 - 2022-04-06

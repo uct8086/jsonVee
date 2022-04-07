@@ -5,7 +5,7 @@ const { merge } = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 // const WebpackMd5Hash = require('webpack-md5-hash');
 
 const env = config.build.env;
@@ -103,11 +103,11 @@ const webpackConfig = merge(baseWebpackConfig, {
             },
         }),
         // new WebpackMd5Hash(),
-        // new CopyPlugin({
-        //     patterns: [
-        //         { from: "./renderer.js", to: "./" },
-        //     ],
-        // }),
+        new CopyPlugin({
+            patterns: [
+                { from: "./three", to: "./three" },
+            ],
+        }),
     ]
 });
 

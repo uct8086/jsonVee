@@ -3,14 +3,14 @@
  * @author uct8086
  */
 import homePanel from './home/index.vue';
-import detailPanel from './detail/index.vue';
+import threePanel from './threeJs/index.vue';
 import pageNotFound from 'components/pageNotFound.vue';
 
 const routes = [
     { path: `/`, component: homePanel },
     {
-        path: `/detail`,
-        component: detailPanel,
+        path: `/threejs`,
+        component: threePanel,
     },
     { path: '/:pathMatch(.*)*', component: pageNotFound }
 ];

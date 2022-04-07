@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div>
       <button @click="toDetail">
-        跳转到详情页
+        跳转到three.js示例
       </button>
     </div>
     <h1>欢迎支持:</h1>

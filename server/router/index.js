@@ -52,7 +52,7 @@ class BaseRouter{
 
         const routers = BaseRouter._getRouters();
 
-        app.use(expressValidator({}));
+        // app.use(expressValidator({}));
 
         routers.forEach((item,index)=>{
             BaseRouter._dispatchHttp(app,item);
