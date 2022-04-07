@@ -4,10 +4,10 @@ import routes from './routers';
 import * as d3 from "d3";
 import 'assets/css/main.less';
 import VirtualList from 'vue-virtual-list-v3';
-// import VueQuillEditor from 'vue-quill-editor';
+import VueQuillEditor from 'vue-quill-text-editor';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
-// import 'vue-quill-editor/dist/vue-quill-text-editor.esm.css';
+import 'vue-quill-text-editor/dist/vue-quill-text-editor.esm.css';
 
 
 
@@ -23,7 +23,7 @@ const myApp = createApp({
 
 myApp.use(router);
 myApp.use(VirtualList);
-// myApp.use(VueQuillEditor);
+myApp.use(VueQuillEditor);
 
 myApp.use(ElementPlus);
 
