@@ -29,7 +29,7 @@
         </template>
       </virtual-list> -->
 
-      <vue-quill-editor
+      <vue-quill-text-editor
         ref="quillRef"
         :placeholder="place"
       />

@@ -59,7 +59,7 @@ export default {
         onMounted(() => {
             d3.select('body');
             selectById();
-            console.log(quillRef.value);
+            console.log(quillRef);
         });
 
         const toDetail = () => {
