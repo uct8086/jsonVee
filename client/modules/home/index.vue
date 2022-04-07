@@ -15,25 +15,36 @@
       alt="empty image"
     >
     <div class="container">
-      <el-table
-        :data="tableData"
-        style="width: 100%"
-      >
-        <el-table-column
-          prop="date"
-          label="日期"
-          width="180"
-        />
-        <el-table-column
-          prop="name"
-          label="姓名"
-          width="180"
-        />
-        <el-table-column
-          prop="address"
-          label="地址"
-        />
-      </el-table>
+      <virtual-list>
+        <template #="{source}">
+          <div class="item-inner">
+            <div class="head">
+              <span># {{ source.index }}</span>
+              <span>{{ source.name }}</span>
+            </div>
+            <div class="desc">
+              {{ source.desc }}
+            </div>
+          </div>
+        </template>
+      </virtual-list>
+
+      <vue-quill-editor />
+
+      <!-- <VirtualList
+        ref="virtualList"
+        class="h-screen overflow-y-auto w-full scroll-touch no-scrollbar"
+        :data-key="'_id'"
+        :data-sources="postItems"
+        :direction="'vertical'"
+        :estimate-size="556"
+        :item-class="'singlePostCard mx-5 mb-4'"
+        :keeps="5"
+        @scroll="scrollNearBy">
+          <template #="{source}">
+          ...
+          </template>
+        </VirtualList> -->
     </div>
   </div>
 </template>
