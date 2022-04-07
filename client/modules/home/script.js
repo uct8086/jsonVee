@@ -47,6 +47,7 @@ export default {
     },
     setup() {
         const virtualList = ref();
+        const quillRef = ref();
         const data = reactive({
             id: "5d42ac3d9c149c38248c8199"
         });
@@ -58,6 +59,7 @@ export default {
         onMounted(() => {
             d3.select('body');
             selectById();
+            console.log(quillRef.value);
         });
 
         const toDetail = () => {
@@ -86,7 +88,9 @@ export default {
             toDetail,
             addItem,
             virtualList,
-            scrollFun
+            scrollFun,
+            quillRef,
+            place: 'this is a test.'
         };
     }
 };

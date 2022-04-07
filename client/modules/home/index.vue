@@ -15,7 +15,7 @@
       alt="empty image"
     >
     <div class="container">
-      <virtual-list>
+      <!-- <virtual-list>
         <template #="{source}">
           <div class="item-inner">
             <div class="head">
@@ -27,9 +27,12 @@
             </div>
           </div>
         </template>
-      </virtual-list>
+      </virtual-list> -->
 
-      <vue-quill-editor />
+      <!-- <vue-quill-editor
+        ref="quillRef"
+        :placeholder="place"
+      /> -->
 
       <!-- <VirtualList
         ref="virtualList"
