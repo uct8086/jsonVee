@@ -5,9 +5,7 @@ const { merge } = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // const CopyPlugin = require("copy-webpack-plugin");
-// const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 // const WebpackMd5Hash = require('webpack-md5-hash');
 
 const env = config.build.env;
@@ -17,12 +15,18 @@ const webpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: [
             {
-                test: /\.(c|le)ss$/,
+                test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'less-loader',
-                    'sass-loader',
+                    "css-loader",
+                ],
+            },
+            {
+                test: /\.(le|sa)ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "less-loader",
                 ],
             },
         ]
@@ -30,23 +34,36 @@ const webpackConfig = merge(baseWebpackConfig, {
     optimization: {
         splitChunks: {
             chunks: 'all',
-            minSize: 30000,
-            maxSize: 1024 * 1024,
+            minSize: 20000,
+            minRemainingSize: 0,
             minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
+            maxAsyncRequests: 30,
+            maxInitialRequests: 30,
+            enforceSizeThreshold: 50000,
+            // 在为按 maxSize 分割的部分创建名称时防止暴露路径信息。
+            hidePathInfo: true,
             cacheGroups: {
-                vendors: {
+                defaultVendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    priority: -10
+                    priority: -10,
+                    reuseExistingChunk: false,
                 },
                 default: {
                     minChunks: 2,
                     priority: -20,
-                    reuseExistingChunk: true
-                }
-            }
+                    reuseExistingChunk: false,
+                },
+                elementPlus: {
+                    name: 'chunk-elementPlus',
+                    priority: 20,
+                    test: /[\\/]node_modules[\\/]_?element-plus(.*)/
+                },
+                elementIcon: {
+                    name: 'chunk-elementIcon',
+                    priority: 20,
+                    test: /[\\/]node_modules[\\/]_?@element-plus(.*)/
+                },
+            },
         },
     },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
@@ -64,16 +81,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         }),
         // extract css into its own file
         new MiniCssExtractPlugin({
-            filename: utils.assetsPath('css/[chunkhash].css')
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
         }),
-        // Compress extracted CSS. We are using this plugin so that possible
-        // duplicated CSS from different components can be deduped.
-        // new OptimizeCSSPlugin({
-        //   cssProcessorOptions: {
-        //     safe: true
-        //   }
-        // }),
-
         // generate dist index.html with correct asset hash for caching.
         // you can customize output by editing /index.html
         // see https://github.com/ampedandwired/html-webpack-plugin
@@ -90,7 +103,6 @@ const webpackConfig = merge(baseWebpackConfig, {
             },
         }),
         // new WebpackMd5Hash(),
-        new VueLoaderPlugin(),
         // new CopyPlugin({
         //     patterns: [
         //         { from: "./renderer.js", to: "./" },
