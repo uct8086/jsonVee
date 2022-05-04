@@ -15,25 +15,66 @@
       alt="empty image"
     >
     <div class="container">
-      <el-table
-        :data="tableData"
-        style="width: 100%"
+      <VirtualList
+        ref="virtualList"
+        :data-key="'id'"
+        :data-sources="items"
+        :estimate-size="73"
       >
-        <el-table-column
-          prop="date"
-          label="日期"
-          width="180"
-        />
-        <el-table-column
-          prop="name"
-          label="姓名"
-          width="180"
-        />
-        <el-table-column
-          prop="address"
-          label="地址"
-        />
-      </el-table>
+        <template #="{source}">
+          <div class="item-inner">
+            <div class="head">
+              <span># {{ source.index }}</span>
+              <span>{{ source.name }}</span>
+            </div>
+            <div class="desc">
+              {{ source.desc }}
+            </div>
+          </div>
+        </template>
+      </VirtualList>
+
+      <!-- <VirtualList
+        ref="virtualList"
+        class="list-horizontal"
+        :data-key="'id'"
+        :direction="'horizontal'"
+        :data-sources="items"
+        :estimate-size="170"
+        :wrap-class="'wrap-list'"
+      >
+        <template #="{source}">
+          <div class="item-inner-horizontal">
+            <div class="head">
+              <span># {{ source.index }}</span>
+              <span>{{ source.name }}</span>
+            </div>
+            <div class="desc">
+              {{ source.desc }}
+            </div>
+          </div>
+        </template>
+      </VirtualList> -->
+
+      <!-- <vue-quill-text-editor
+        ref="quillRef"
+        :placeholder="place"
+      /> -->
+
+      <!-- <VirtualList
+        ref="virtualList"
+        class="h-screen overflow-y-auto w-full scroll-touch no-scrollbar"
+        :data-key="'_id'"
+        :data-sources="postItems"
+        :direction="'vertical'"
+        :estimate-size="556"
+        :item-class="'singlePostCard mx-5 mb-4'"
+        :keeps="5"
+        @scroll="scrollNearBy">
+          <template #="{source}">
+          ...
+          </template>
+        </VirtualList> -->
     </div>
   </div>
 </template>
@@ -73,6 +114,7 @@
 }
 .list-horizontal {
   width: 100%;
+  height: 300px;
   overflow-x: auto;
   display: flex;
   .wrapper {
@@ -99,4 +141,5 @@
     font-size: 16px;
   }
 }
+.wrap-list{display: flex;}
 </style>
