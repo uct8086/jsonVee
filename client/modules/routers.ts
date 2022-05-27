@@ -2,8 +2,8 @@
  * @description 客户端路由
  * @author uct8086
  */
-import homePanel from './home/index.vue';
-import detailPanel from './detail/index.vue';
+import homePanel from 'modules/home/index.vue';
+import detailPanel from 'modules/detail/index.vue';
 import pageNotFound from 'components/pageNotFound.vue';
 
 const routes = [

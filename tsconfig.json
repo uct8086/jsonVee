@@ -10,9 +10,18 @@
         "forceConsistentCasingInFileNames": true,
         "composite": true,
         "target": "ES6",
+        "paths": {
+            "@/*": ["./client/*"],
+            "assets/*": ["./client/assets/*"],
+            "common/*": ["./client/common/*"],
+            "modules/*": ["./client/modules/*"],
+            "components/*": ["./client/components/*"],
+        },
     },
     "include": [
-        "./client/**/*"
+        "./client/**/*.ts",
+        "./client/**/**/*.ts",
+        "./types/*.d.ts"
     ],
     "exclude": [
         "node_modules"

@@ -3,4 +3,4 @@
     <h1>this is detail page</h1>
   </div>
 </template>
-<script src="./script.js"></script>
+<script src="./script.ts"></script>

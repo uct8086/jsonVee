@@ -1,5 +1,5 @@
-import {createApp} from 'vue';
-import {createRouter, createWebHashHistory} from 'vue-router';
+import { createApp } from 'vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import routes from './routers';
 import 'assets/css/main.less';
 import ElementPlus from 'element-plus';
