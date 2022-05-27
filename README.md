@@ -6,6 +6,10 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 
 ## 更新 
 
+- 2022-05-27
+
+1. 添加TypeScript支持，并新建typescript分支
+
 - 2022-04-06
 
 1. 添加element-plus支持
