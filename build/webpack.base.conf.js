@@ -16,7 +16,7 @@ function resolve(dir) {
 
 module.exports = {
     entry: {
-        app: [ `./client/modules/main.js`],
+        app: [ `./client/modules/main.ts`],
     },
     target: ['web', 'es5'],
     output: {
@@ -44,6 +44,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: "/node-modules/"
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -93,7 +98,7 @@ module.exports = {
     plugins: [
         new ESLintPlugin({
             fix: false,
-            extensions: ['js', 'json', 'vue'],
+            extensions: ['js', 'json', 'vue', 'ts', 'tsx'],
             outputReport: true,
             // exclude: '/node_modules/' // fix bug: ERROR in Failed to load config "./.config/eslint.config" to extend from.
         }),
