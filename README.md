@@ -1,5 +1,8 @@
 # jsonVee
-An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
+
+一个高效的前后端集成框架，基于Vite、Vue、Webpack和Node.js。一键启动，开箱即用。
+
+An efficient front-end and back-end integration framework based on Vite, Vue, Webpack, and Node.js. One click start, ready to use out of the box.
 
 ## 更新 
 
