@@ -24,7 +24,7 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 2. 调整打包逻辑，移除老代码
 3. 更新依赖包，到最新版本
 4. 切换到Vue3.0，欢迎大家尝鲜。
-### 运行与调试
+## 运行与调试
 
 1. 安装依赖(也可以安装 lerna 来管理多个包，这里为了方便，直接安装所有包的依赖)
 
@@ -39,7 +39,7 @@ pnpm install
 
 3. 基本运行项目 
 
-    1.0 一次性启动前后端
+    3.0 一次性启动前后端
     ```bash
     # 在项目根目录运行
 
@@ -47,13 +47,13 @@ pnpm install
 
     ```
 
-    1.1 启动服务端
+    3.1 启动服务端
     ```bash
     cd packages/server
 
     npm run server
     ```
-    1.2 启动前端
+    3.2 启动前端
     ```bash
     cd packages/client
 
