@@ -48,6 +48,6 @@ app.use(function (err, req, res, next) {
 });
 app.set('host', process.env.IP || 'localhost');
 app.set('port', process.env.PORT || 8050);
-const server = app.listen(app.get('port'), app.get('host'), function () {
-    console.log('server listening on port', server.address().port);
+app.listen(app.get('port'), app.get('host'), function () {
+    console.log('服务端启动成功，监听端口：' + app.get('port'));
 });

@@ -29,10 +29,8 @@ An efficient front-end integration framework，Based on Node.js, Vue, Webpack.
 1. 安装依赖(也可以安装 lerna 来管理多个包，这里为了方便，直接安装所有包的依赖)
 
 ```bash
-cd packages/server
-pnpm install
+# 在项目根目录运行
 
-cd packages/client
 pnpm install
 ```
 2. 安装MongoDB
@@ -41,19 +39,30 @@ pnpm install
 
 3. 基本运行项目 
 
+    1.0 一次性启动前后端
+    ```bash
+    # 在项目根目录运行
+
+    pnpm start
+
+    ```
+
     1.1 启动服务端
     ```bash
     cd packages/server
+
     npm run server
     ```
     1.2 启动前端
     ```bash
     cd packages/client
+
     npm run start
     ```
 4. 发布
 ```bash
 cd packages/client
+
 npm run build
 ```
 此时会执行webpack的构建，目标文件会放到public目录

@@ -33,6 +33,15 @@ export default defineConfig({
         },
       ],
     }),
+    {
+      name: 'custom-success-message',
+      apply: 'serve', // 仅在开发服务器启动时应用
+      configureServer(server) {
+        server.httpServer.on('listening', () => {
+          console.log(`客户端启动成功，监听端口：${server.config.server.port}`);
+        });
+      },
+    },
   ],
   css: {
     preprocessorOptions: {

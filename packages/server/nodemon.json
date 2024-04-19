@@ -15,9 +15,7 @@
         
     },
     "watch": [
-        "client/",
-        "app.js",
-        "server/"
+        "packages/server/"
     ],
     "env": {
         "NODE_ENV": "local"
