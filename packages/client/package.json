@@ -15,7 +15,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "5.0.4",
     "axios": "1.8.2",
-    "element-plus": "2.7.0",
+    "element-plus": "2.11.0",
     "less": "4.2.0",
     "less-loader": "12.2.0",
     "unplugin-element-plus": "0.8.0",
