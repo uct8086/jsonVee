@@ -21,7 +21,7 @@
     "express-session": "1.18.0",
     "express-validator": "7.0.1",
     "helmet": "7.1.0",
-    "mongoose": "8.9.5",
+    "mongoose": "8.22.1",
     "serve-favicon": "2.5.0"
   },
   "devDependencies": {
